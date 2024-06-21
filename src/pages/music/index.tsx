@@ -16,15 +16,15 @@ const albums: Album[] = [
   {
     title: "Killing Twins Demo",
     imageUrl: "/demo-art.png",
-    releaseDate: "2024"
-  }
+    releaseDate: "2024",
+  },
 ];
 
 export default function Music() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-dvh">
       <Navbar />
-      <div className="container mx-auto w-5/6 md:w-3/4 pt-10">
+      <div className="container mx-auto w-5/6 md:w-3/4 py-10">
         <h2 className="text-3xl pb-9">Discography</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-lg">
           {albums.map((album) => (

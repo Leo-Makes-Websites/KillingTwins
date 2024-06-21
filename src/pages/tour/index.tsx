@@ -18,10 +18,9 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-dvh">
       <Navbar />
-      <div className="container mx-auto w-5/6 md:w-2/3 pt-10">
-        <div className="grid grid-cols-4 mx-auto mb-5">
+      <div className="container mx-auto w-5/6 md:w-2/3 py-10">        <div className="grid grid-cols-4 mx-auto mb-5">
           <div className="col w-auto h-auto">
             {" "}
             <Image
@@ -41,7 +40,7 @@ export default function HomePage() {
             <thead>
               <tr>
                 <th className="p-4 w-1/6 border-b border-zinc-700">Date</th>
-                <th className="p-4 w-3/6 border-b border-zinc-700">Location</th>
+                <th className="p-4 w-4/6 border-b border-zinc-700">Location</th>
                 <th className="p-4 w-1/6 border-b border-zinc-700">Tickets</th>
               </tr>
             </thead>
