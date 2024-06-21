@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 interface NavbarProps {
   // Add any props you need for customization
@@ -39,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               <span className="sr-only">Open main menu</span>
               {/* Icon when menu is closed */}
               <svg
-                className={`block h-6 w-6 ${toggleMenu ? "hidden" : "block"}`}
+                className={`h-6 w-6 ${toggleMenu ? "hidden" : "block"}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -54,16 +55,16 @@ const Navbar: React.FC<NavbarProps> = () => {
               </svg>
               {/* Icon when menu is open */}
               <svg
-                className={`hidden h-6 w-6 ${toggleMenu ? "block" : "hidden"}`}
+                className={`h-6 w-6 ${toggleMenu ? "block" : "hidden"}`}
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
+                stroke-width="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -83,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     }`}
                     aria-current={isActive(link.href) ? "page" : "false"}
                   >
-                    {link.label} 
+                    {link.label}
                   </Link>
                 ))}
               </div>
@@ -92,7 +93,10 @@ const Navbar: React.FC<NavbarProps> = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`sm:hidden ${toggleMenu ? "block" : "hidden"}`} id="mobile-menu">
+        <div
+          className={`sm:hidden ${toggleMenu ? "block" : "hidden"}`}
+          id="mobile-menu"
+        >
           <div className="space-y-1 px-2 pb-3 pt-2">
             {navLinks.map((link) => (
               <Link
@@ -103,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 }`}
                 aria-current={isActive(link.href) ? "page" : "false"}
               >
-                {link.label} 
+                {link.label}
               </Link>
             ))}
           </div>
@@ -114,4 +118,3 @@ const Navbar: React.FC<NavbarProps> = () => {
 };
 
 export default Navbar;
-
