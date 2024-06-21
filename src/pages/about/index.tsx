@@ -62,7 +62,7 @@ export default function About() {
               </div>
             </div>
             <p className="text-center mb-4">
-              Rythm Guitar
+              Rhythm Guitar
               <br />
               2024-Present
             </p>
