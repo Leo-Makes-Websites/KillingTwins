@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   const isActive = (href: string) => router.pathname === href;
 
   return (
-    <nav className="sticky top-0 bg-neutral-950 z-50">
+    <nav className="sticky top-0 z-50 bg-neutral-950">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
@@ -58,13 +58,13 @@ const Navbar: React.FC<NavbarProps> = () => {
                 className={`h-6 w-6 ${toggleMenu ? "block" : "hidden"}`}
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -94,10 +94,10 @@ const Navbar: React.FC<NavbarProps> = () => {
 
         {/* Mobile menu */}
         <div
-          className={`sm:hidden ${toggleMenu ? "block" : "hidden"}`}
+          className={`fixed left-0 right-0 top-0 z-50 mt-16 bg-black sm:hidden ${toggleMenu ? "block" : "hidden"}`}
           id="mobile-menu"
         >
-          <div className="space-y-1 px-2 pb-3 pt-2">
+          <div className="space-y-1 px-2 pb-3">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
