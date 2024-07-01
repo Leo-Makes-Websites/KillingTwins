@@ -1,12 +1,12 @@
 [
-    {
-      "title": "Christ A Lie",
-      "imageUrl": "/christ-a-lie-demo.png",
-      "releaseDate": "July 2024",
-    },
-    {
-      "title": "Killing Twins Demo",
-      "imageUrl": "/demo-art.png",
-      "releaseDate": "2024"
-    }
-  ];
+  {
+    "title": "The Lie",
+    "imageUrl": "/the-lie-demo.webp",
+    "releaseDate": "July 2024"
+  },
+  {
+    "title": "Killing Twins Demo",
+    "imageUrl": "/demo-art.png",
+    "releaseDate": "2024"
+  }
+]

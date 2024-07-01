@@ -1,11 +1,10 @@
 import Navbar from "@/components/navbar";
-
 export default function Contact() {
   return (
-    <div className="bg-black text-white min-h-dvh">
+    <div className="min-h-dvh bg-black text-white">
       <Navbar />
-      <div className="container mx-auto w-5/6 md:w-3/4 py-10">
-        <h1 className="text-2xl sm:text-5xl pb-9">Contact Information</h1>
+      <div className="container mx-auto w-5/6 py-10 md:w-3/4">
+        <h1 className="pb-9 text-2xl sm:text-5xl">Contact Information</h1>
         <p className="sm:text-xl">
           Booking:{" "}
           <a
@@ -13,7 +12,8 @@ export default function Contact() {
             href="mailto:killingtwinsband@gmail.com"
             target="_blank"
           >
-            killingtwinsband@gmail.com
+            {" "}
+            killingtwinsband@gmail.com{" "}
           </a>
         </p>
         <p>778 980 7795</p>
