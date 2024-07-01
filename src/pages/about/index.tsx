@@ -7,10 +7,13 @@ export default function About() {
       <Navbar />
       <div className="container mx-auto px-2 py-10 sm:px-0 md:w-3/4">
         <Image
-          src="/about.jpg"
-          height={1440}
-          width={2560}
+          src="/media/about.webp"
+          width={1920}
+          height={1080}
           alt={"Killing Twins band members"}
+          priority
+          placeholder="blur"
+          blurDataURL="/media/about.webp"
         />
         <p className="pt-2 text-3xl">About</p>
         <p>about text (WIP)</p>
@@ -22,10 +25,11 @@ export default function About() {
             <div className="relative">
               <Image
                 className="bg-red-400 p-1"
-                src="https://placehold.co/1000.png"
-                width={1000}
-                height={1000}
+                src="https://placehold.co/500.webp"
+                width={500}
+                height={500}
                 alt="Jack Drews"
+                priority
               />
               <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-2xl font-bold">
                 Jack Drews
@@ -54,9 +58,9 @@ export default function About() {
             <div className="relative">
               <Image
                 className="bg-red-400 p-1"
-                src="https://placehold.co/1000.png"
-                width={1000}
-                height={1000}
+                src="https://placehold.co/500.webp"
+                width={500}
+                height={500}
                 alt="Kyle Desharnais"
               />
               <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-2xl font-bold">
@@ -78,9 +82,9 @@ export default function About() {
             <div className="relative">
               <Image
                 className="bg-red-400 p-1"
-                src="https://placehold.co/1000.png"
-                width={1000}
-                height={1000}
+                src="https://placehold.co/500.webp"
+                width={500}
+                height={500}
                 alt="Kurt Winter"
               />
               <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-2xl font-bold">
@@ -103,9 +107,9 @@ export default function About() {
             <div className="relative">
               <Image
                 className="bg-red-400 p-1"
-                src="https://placehold.co/1000.png"
-                width={1000}
-                height={1000}
+                src="https://placehold.co/500.webp"
+                width={500}
+                height={500}
                 alt="Alex Winter"
               />
               <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-2xl font-bold">

@@ -11,17 +11,11 @@ interface Event {
   }[];
 }
 
+const eventsData = require("@/../../public/json/events.json");
+
 export async function getStaticProps() {
-  let events: Event[] = [];
-
-  try {
-    events = await require("@/../../public/events.json");
-  } catch (error) {
-    console.error("Error parsing JSON:", error);
-  }
-
   return {
-    props: { events },
+    props: { events: eventsData },
   };
 }
 
@@ -38,6 +32,8 @@ export default function Tour({ events }: { events: Event[] }) {
               width={1800}
               height={1165}
               priority
+              placeholder="blur"
+              blurDataURL="/logo-white.svg"
             />
           </div>
           <div className="col-span-2 col-start-2 my-auto w-auto text-center text-5xl zfold:text-2xl">
