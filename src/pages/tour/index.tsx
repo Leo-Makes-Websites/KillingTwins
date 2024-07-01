@@ -1,28 +1,37 @@
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 interface Event {
   date: string;
   location: string;
   ticketLink: string;
+  buttons?: {
+    label: string;
+    link: string;
+  }[];
 }
 
-export default function HomePage() {
-  const [events, setEvents] = useState<Event[]>([]);
+export async function getStaticProps() {
+  let events: Event[] = [];
 
-  useEffect(() => {
-    fetch("/events.json")
-      .then((response) => response.json())
-      .then((data) => setEvents(data));
-  }, []);
+  try {
+    events = await require("@/../../public/events.json");
+  } catch (error) {
+    console.error("Error parsing JSON:", error);
+  }
 
+  return {
+    props: { events },
+  };
+}
+
+export default function Tour({ events }: { events: Event[] }) {
   return (
-    <div className="bg-black text-white min-h-dvh">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <div className="container mx-auto w-5/6 md:w-2/3 py-10">        <div className="grid grid-cols-4 mx-auto mb-5">
-          <div className="col w-auto h-auto">
-            {" "}
+      <div className="container mx-auto w-5/6 py-10 md:w-3/4 zfold:w-full">
+        <div className="mx-auto mb-5 grid grid-cols-4">
+          <div className="col-span-1 h-auto w-auto zfold:col-span-4 zfold:mx-auto zfold:w-2/3">
             <Image
               src="/logo-white.svg"
               alt="Killing Twins Logo"
@@ -31,51 +40,55 @@ export default function HomePage() {
               priority
             />
           </div>
-          <div className="col-start-2 col-end-4 w-auto my-auto text-center text-5xl">
-            <p>Upcoming Events</p>
+          <div className="col-span-2 col-start-2 my-auto w-auto text-center text-5xl zfold:text-2xl">
+            Upcoming Events
           </div>
         </div>
-        <div className="py-4 bg-zinc-900 rounded-xl">
-          <table className="table-fixed w-full text-left border-collapse">
-            <thead>
-              <tr>
-                <th className="p-4 w-1/6 border-b border-zinc-700">Date</th>
-                <th className="p-4 w-4/6 border-b border-zinc-700">Location</th>
-                <th className="p-4 w-1/6 border-b border-zinc-700">Tickets</th>
-              </tr>
-            </thead>
-            <tbody>
-              {events.length > 0 ? (
-                events.map((event) => (
-                  <tr key={event.date}>
-                    <td className="p-4 w-1/6 border-b border-zinc-700">
-                      {event.date}
-                    </td>
-                    <td className="p-4 w-3/6 border-b border-zinc-700">
-                      {event.location}
-                    </td>
-                    <td className="p-4 w-1/6 border-b border-zinc-700">
-                      <a
-                        href={event.ticketLink}
-                        className="bg-red-500 text-white font-medium py-2 px-4 rounded-md hover:bg-red-700"
-                      >
-                        Buy Tickets
-                      </a>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td
-                    colSpan={3}
-                    className="p-4 w-full border-b border-zinc-700 text-center text-lg"
-                  >
-                    No upcoming events
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+
+        <div className="rounded-xl bg-zinc-900 py-4">
+          <div className="overflow-x-auto">
+            {events.length > 0 ? (
+              <div>
+                <div className="hidden border-b border-zinc-700 text-sm sm:grid sm:grid-cols-12 sm:text-base">
+                  <div className="col-span-2 w-full p-4">Date</div>
+                  <div className="col-span-3 w-full p-4">Location</div>
+                </div>
+                <ul className="list-none">
+                  {events.map((event) => (
+                    <li
+                      key={event.date}
+                      className="grid grid-cols-2 border-b border-zinc-700 sm:grid-cols-12"
+                    >
+                      <div className="col-span-1 w-full p-4 sm:col-span-3">
+                        {event.date}
+                      </div>
+                      <div className="col-span-1 w-full p-4 sm:col-span-4 lg:col-span-5">
+                        {event.location}
+                      </div>
+                      <div className="col-span-2 flex w-full flex-col gap-2 p-4 sm:col-span-5 sm:grid sm:grid-cols-2 lg:col-span-4">
+                        {event.buttons &&
+                          event.buttons.map((button, index) => (
+                            <a
+                              key={button.label}
+                              href={button.link}
+                              className={`block rounded-lg bg-red-500 px-4 py-2 text-center font-medium text-white hover:bg-red-700 ${index === 0 && "sm:order-last"} ${event.buttons && event.buttons.length % 2 !== 0 && index === 0 && "sm:col-span-2"}`}
+                            >
+                              <div className="flex h-full items-center justify-center">
+                                {button.label}
+                              </div>
+                            </a>
+                          ))}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className="col-span-full w-full p-4 text-center text-lg">
+                No upcoming events
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

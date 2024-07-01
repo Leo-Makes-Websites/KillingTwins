@@ -7,26 +7,27 @@ interface Album {
   releaseDate: string;
 }
 
-const albums: Album[] = [
-  {
-    title: "The Lie",
-    imageUrl: "/the-lie-demo.webp",
-    releaseDate: "July 2024",
-  },
-  {
-    title: "Killing Twins Demo",
-    imageUrl: "/demo-art.png",
-    releaseDate: "2024",
-  },
-];
+export async function getStaticProps() {
+  let albums: Album[] = [];
 
-export default function Music() {
+  try {
+    albums = await require("@/../../public/albums.json");
+  } catch (error) {
+    console.error("Error parsing JSON:", error);
+  }
+
+  return {
+    props: { albums },
+  };
+}
+
+export default function Music({ albums }: { albums: Album[] }) {
   return (
-    <div className="bg-black text-white min-h-dvh">
+    <div className="min-h-dvh bg-black text-white">
       <Navbar />
-      <div className="container mx-auto w-5/6 md:w-3/4 py-10">
-        <h2 className="text-3xl pb-9">Discography</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 text-lg">
+      <div className="container mx-auto w-5/6 py-10 md:w-3/4">
+        <h2 className="pb-9 text-3xl">Discography</h2>
+        <div className="grid grid-cols-1 gap-4 text-lg sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {albums.map((album) => (
             <div key={album.title} className="aspect-square h-auto">
               <Image
@@ -34,9 +35,11 @@ export default function Music() {
                 width={1600}
                 height={1600}
                 alt={album.title}
+                placeholder="blur"
+                blurDataURL={album.imageUrl}
               />
-              <p className="text-center pt-2">{album.title}</p>
-              <p className="text-center pt-2">{album.releaseDate}</p>
+              <p className="pt-2 text-center">{album.title}</p>
+              <p className="pt-2 text-center">{album.releaseDate}</p>
             </div>
           ))}
         </div>
