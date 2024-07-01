@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
           <div className="aspect-square h-auto bg-blue-100">
             <Image
-              src="/demo-art.png"
+              src="/media/demo-art.webp"
               alt="Demo Art"
               width={1600}
               height={1600}

@@ -13,7 +13,7 @@ export async function getStaticProps() {
   let mediaData: MediaItem[] = [];
 
   try {
-    mediaData = await require("@/../../public/media.json");
+    mediaData = await require("@/../../public/json/media.json");
   } catch (error) {
     console.error("Error parsing JSON:", error);
   }

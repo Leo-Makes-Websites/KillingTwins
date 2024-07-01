@@ -1,12 +1,12 @@
 [
   {
     "title": "The Lie",
-    "imageUrl": "/the-lie-demo.webp",
+    "imageUrl": "/media/the-lie-demo.webp",
     "releaseDate": "July 2024"
   },
   {
     "title": "Killing Twins Demo",
-    "imageUrl": "/demo-art.png",
+    "imageUrl": "/media/demo-art.webp",
     "releaseDate": "2024"
   }
 ]

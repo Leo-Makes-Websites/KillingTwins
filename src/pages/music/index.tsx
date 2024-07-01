@@ -11,7 +11,7 @@ export async function getStaticProps() {
   let albums: Album[] = [];
 
   try {
-    albums = await require("@/../../public/albums.json");
+    albums = await require("@/../../public/json/albums.json");
   } catch (error) {
     console.error("Error parsing JSON:", error);
   }
