@@ -21,7 +21,7 @@ export default function About() {
           March 22nd, 2023. The band was formed by lead guitarist and vocalist
           Jack Drews, who met drummer Kurt Winter on the platform Bandmix.
           Despite facing challenges in finding a permanent bassist, the duo
-          eventually recruited Kurt's brother, Alex Winter, to complete the
+          eventually recruited Kurt&apos;s brother, Alex Winter, to complete the
           lineup. In February 2024, they discovered rhythm guitarist Kyle
           Desharnais through Bandmix.{" "}
         </p>
