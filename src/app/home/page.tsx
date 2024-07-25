@@ -16,13 +16,13 @@ export default function HomePage() {
           <div className="mb-2">On the release radar</div>
           <Image
             className="h-auto"
-            src="/media/the-lie-demo.webp"
-            alt="Demo Art"
+            src="/media/scream-for-war.webp"
+            alt="Scream For War"
             width={600}
             height={600}
             priority
           />
-          <div className="mt-2">July 12</div>
+          <div className="mt-2">July 26</div>
         </div>
 
         {/*

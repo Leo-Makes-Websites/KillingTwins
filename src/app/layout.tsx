@@ -16,7 +16,7 @@ export default function RootLayout({
         <Script src="http://localhost:8097"></Script>
       </head>
       <body className={inter.className}>
-        <main className="min-h-dvh bg-black text-white">
+        <main className="min-h-dvh bg-neutral-950 text-white">
           <Navbar />
           {children}
         </main>
