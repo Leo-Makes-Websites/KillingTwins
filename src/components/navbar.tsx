@@ -1,15 +1,14 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-interface NavbarProps {
-  // Add any props you need for customization
-}
+interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/home", label: "Home" },
@@ -21,10 +20,10 @@ const Navbar: React.FC<NavbarProps> = () => {
     { href: "/contact", label: "Contact" },
   ];
 
-  const isActive = (href: string) => router.pathname === href;
+  const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="sticky top-0 z-50 bg-neutral-950">
+    <nav className="sticky top-0 z-50 bg-neutral-900">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
@@ -36,9 +35,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               aria-expanded={toggleMenu ? "true" : "false"}
               onClick={() => setToggleMenu(!toggleMenu)}
             >
-              <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
-              {/* Icon when menu is closed */}
               <svg
                 className={`h-6 w-6 ${toggleMenu ? "hidden" : "block"}`}
                 fill="none"
@@ -53,12 +50,11 @@ const Navbar: React.FC<NavbarProps> = () => {
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
-              {/* Icon when menu is open */}
               <svg
                 className={`h-6 w-6 ${toggleMenu ? "block" : "hidden"}`}
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="1.5"
+                strokeWidth={1.5}
                 stroke="currentColor"
                 aria-hidden="true"
               >
@@ -82,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     className={`text-md rounded-md px-3 py-2 font-medium text-red-600 hover:bg-neutral-700 hover:text-red-500 ${
                       isActive(link.href) ? "bg-neutral-800 text-red-500" : ""
                     }`}
-                    aria-current={isActive(link.href) ? "page" : "false"}
+                    aria-current={isActive(link.href) ? "page" : undefined}
                   >
                     {link.label}
                   </Link>
@@ -105,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 className={`block rounded-md px-3 py-2 text-base font-medium text-red-600 hover:bg-neutral-700 hover:text-red-500 ${
                   isActive(link.href) ? "bg-neutral-800 text-red-500" : ""
                 }`}
-                aria-current={isActive(link.href) ? "page" : "false"}
+                aria-current={isActive(link.href) ? "page" : undefined}
               >
                 {link.label}
               </Link>

@@ -1,0 +1,37 @@
+[
+  {
+    "title": "The Lie",
+    "imageUrl": "/media/the-lie-demo.webp",
+    "releaseDate": "July 12 2024",
+    "about": {
+      "description": "The Lie is our first demo release. It was written by our lead guitarist and vocalist Jack Drews and was recorded in our drummers basement on June 23rd 2024. It was mixed and recorded by our rhythm guitarist Kyle Desharnais and vocalist/lead guitarist Jack Drews.",
+      "links": [
+        {
+          "platform": "spotify",
+          "url": "https://open.spotify.com/track/5Q2qMjvYrY37DEk83z2Fht"
+        },
+        {
+          "platform": "deezer",
+          "url": ""
+        },
+        {
+          "platform": "amazonmusic",
+          "url": ""
+        },
+        {
+          "platform": "itunes",
+          "url": ""
+        },
+        {
+          "platform": "tidal",
+          "url": ""
+        }
+      ]
+    }
+  },
+  {
+    "title": "Scream For War",
+    "imageUrl": "/media/scream-for-war.webp",
+    "releaseDate": "July 26 2024"
+  }
+]
