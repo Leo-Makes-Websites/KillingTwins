@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { promises as fs } from "fs";
 
+export const metadata = { title: "Killing Twins - Tour" };
+
 interface TourEvent {
   date: string;
   location: string;

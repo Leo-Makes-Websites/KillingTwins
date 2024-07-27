@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+export const metadata = { title: "Killing Twins - About" };
+
 export default function About() {
   return (
     <div className="container mx-auto px-2 py-10 sm:px-0 md:w-3/4">
@@ -20,7 +22,7 @@ export default function About() {
         facing challenges in finding a permanent bassist, the duo eventually
         recruited Kurt&apos;s brother, Alex Winter, to complete the lineup. In
         February 2024, they discovered rhythm guitarist Kyle Desharnais through
-        Bandmix.{" "}
+        Bandmix.
       </p>
       <p className="block pt-4 text-center text-4xl sm:hidden">Band Members</p>
       <div className="grid grid-cols-1 pt-2 sm:grid-cols-4">

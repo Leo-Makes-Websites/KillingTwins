@@ -2,6 +2,8 @@ import { promises as fs } from "fs";
 import path from "path";
 import Album from "@/components/album";
 
+export const metadata = { title: "Killing Twins - Music" };
+
 interface Song {
   title: string;
   imageUrl: string;
