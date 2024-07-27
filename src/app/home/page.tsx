@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Album from "@/components/album";
+
 export default function HomePage() {
   return (
     <div className="container mx-auto px-2 py-10 sm:px-0 md:w-3/4">
@@ -12,16 +14,9 @@ export default function HomePage() {
         />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
-        <div className="aspect-square h-auto text-center">
+        <div className="aspect-square h-auto bg-neutral-900 text-center sm:bg-inherit">
           <div className="mb-2">On the release radar</div>
-          <Image
-            className="h-auto"
-            src="/media/scream-for-war.webp"
-            alt="Scream For War"
-            width={600}
-            height={600}
-            priority
-          />
+          <Album songKey="scream_for_war" />
           <div className="mt-2">July 26</div>
         </div>
 

@@ -1,6 +1,6 @@
-[
-  {
-    "title": "The Lie",
+{
+  "the_lie": {
+    "title": "The Lie Demo",
     "imageUrl": "/media/the-lie-demo.webp",
     "releaseDate": "July 12 2024",
     "about": {
@@ -12,26 +12,26 @@
         },
         {
           "platform": "deezer",
-          "url": ""
+          "url": "https://deezer.com/track/2880224512"
         },
         {
           "platform": "amazonmusic",
-          "url": ""
+          "url": "https://music.amazon.com/tracks/B0D91B4K38"
         },
         {
-          "platform": "itunes",
-          "url": ""
+          "platform": "applemusic",
+          "url": "https://music.apple.com/album/the-lie-demo-single/1756413552"
         },
         {
           "platform": "tidal",
-          "url": ""
+          "url": "https://tidal.com/browse/track/373861178"
         }
       ]
     }
   },
-  {
+  "scream_for_war": {
     "title": "Scream For War",
     "imageUrl": "/media/scream-for-war.webp",
-    "releaseDate": "July 26 2024"
+    "releaseDate": "June 2024"
   }
-]
+}
