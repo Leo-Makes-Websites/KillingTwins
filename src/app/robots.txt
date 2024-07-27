@@ -1,0 +1,12 @@
+User-agent: Googlebot
+Allow: /
+Allow: /home
+Allow: /music
+Allow: /music/*
+Allow: /tour
+Allow: /media
+Allow: /about
+Allow: /contact
+
+User-agent: *
+Disallow: /

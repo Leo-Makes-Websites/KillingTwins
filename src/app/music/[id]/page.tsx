@@ -14,6 +14,21 @@ interface Song {
   };
 }
 
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const filePath = path.join(process.cwd(), "src/json/albums.json");
+  const fileContents = await fs.readFile(filePath, "utf8");
+  const json = JSON.parse(fileContents);
+  const song = json[params.id] as Song | undefined;
+
+  if (!song) {
+    return { title: "Song not found" };
+  }
+
+  return {
+    title: `Killing Twins - ${song.title}`,
+  };
+}
+
 export default async function Page({ params }: { params: { id: string } }) {
   const filePath = path.join(process.cwd(), "src/json/albums.json");
   const fileContents = await fs.readFile(filePath, "utf8");

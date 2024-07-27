@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Album from "@/components/album";
 
+export const metadata = { title: "Killing Twins - Home" };
+
 export default function HomePage() {
   return (
     <div className="container mx-auto px-2 py-10 sm:px-0 md:w-3/4">
