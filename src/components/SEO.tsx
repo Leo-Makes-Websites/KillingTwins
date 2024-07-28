@@ -24,7 +24,7 @@ const SEO = ({
       "Experience the raw energy of Killing Twins, a death thrash metal band from Metro Vancouver.",
     keywords: tags ? `${tags}, ${baseKeyWords}` : baseKeyWords,
     robots: {
-      index: false,
+      index: true,
       follow: true,
       nocache: true,
       googleBot: {
